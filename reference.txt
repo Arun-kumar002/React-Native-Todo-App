@@ -1,0 +1,111 @@
+View & Text:
+    The most fundamental component for building a UI, View is a container that supports layout with flexbox, style, some touch handling, and accessibility controls. 
+    see here: https://reactnative.dev/docs/view
+
+    A React component for displaying text.Text supports nesting, styling, and touch handling.
+
+    see here: https://reactnative.dev/docs/text
+
+    note: if you text inside a text it will inherit the property of parent text.
+
+
+    ex: 
+
+     <View style={styles.container}>
+      <Text style={styles.boldText}>Test Arun Open up App.js to start working on <Text>{state}</Text>your app!</Text>
+      </View>
+
+Button:
+    seehere: https://reactnative.dev/docs/button
+            https://blog.logrocket.com/create-style-custom-buttons-react-native/
+    in react-native button is a self closing tag.
+    we cant use style property in button tag . react native wont allow to do that. better place inside a view it will give style for the btn.
+    ex:
+     <View style={styles.buttonContainer}>
+          <Button title="Click Here !" />
+      </View>
+
+    onPress: event 
+     <Button title="Click Here !" onPress={() => { handleClick() }} />
+
+
+TextInput:
+    TextInput Is The component we can able to collect user datas like our html input tag.
+
+    see here: https://reactnative.dev/docs/textinput
+
+    ex: <TextInput style={styles.input} placeholder='e.g. Arun Kumar' onChangeText={(val)=>setState(val)} />
+
+
+List & Scroll Bar:
+
+    React Native App Defaultly Dont Allow User To Scroll That Why It Has A Scroll View Component. 
+
+    see here: https://reactnative.dev/docs/scrollview
+    ex: 
+      <ScrollView>
+        {
+          state.map((value, index) => {
+            return (<View key={index} >
+              <Text style={styles.item}>Im Index{index}</Text>
+            </View>)
+          })
+        }
+      </ScrollView>
+
+Flat List :
+    see here: https://reactnative.dev/docs/flatlist
+
+    We Dont want to give key to view .it will take automatically.
+    A performant interface for rendering basic, flat lists, supporting the most handy features:
+
+    Fully cross-platform.
+    Optional horizontal mode.
+    Configurable viewability callbacks.
+    Header support
+    ex:
+
+    <FlatList
+        keyExtractor={(item, index) => index}
+        data={state}
+        numColumns={3}
+        renderItem={({ item, index }) => {
+          return (
+            <Text style={styles.item}>Im Index{index}</Text>
+          )
+        }}
+      >
+
+      </FlatList>
+
+TouchableOpacity:
+
+    A wrapper for making views respond properly to touches. On press down, the opacity of the wrapped view is decreased, dimming it.
+
+    see here : https://reactnative.dev/docs/touchableopacity
+
+
+    ex: 
+
+      <View style={styles.container}>
+      <TextInput style={styles.input} placeholder='e.g. Arun Kumar' onChangeText={(val) => setState(val)} keyboardType='numeric' />
+
+      <FlatList
+        keyExtractor={(item, index) => index}
+        data={state}
+        numColumns={3}
+        renderItem={({ item, index }) => {
+          return (
+            <TouchableOpacity onPress={() => pressHandler(index)}>
+              <Text style={styles.item}>Im Index{index}</Text>
+            </TouchableOpacity>
+          )
+        }}
+      >
+
+      </FlatList>
+
+       const pressHandler = (index) => {
+        console.log(index)
+            alert(`You clicked ${index}`)
+        }
