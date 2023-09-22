@@ -129,3 +129,61 @@ if the user click the any place in the screen it will call the onPress event we 
 
 see here: https://reactnative.dev/docs/touchablewithoutfeedback
 
+
+flexbox:
+
+ex: 
+
+import React from 'react'
+import { StyleSheet, View, Text } from 'react-native';
+
+
+export default function Sandbox() {
+    return (
+
+        <View style={styles.container}>
+            <Text style={styles.One}>One</Text>
+            <Text style={styles.Two}>Two</Text>
+            <Text style={styles.Three}>Three</Text>
+            <Text style={styles.Four}>Four</Text>
+            <Text style={styles.Five}>Five</Text>
+        </View>
+    )
+}
+
+
+const styles = StyleSheet.create({
+    container: {
+        paddingTop: 40,
+        backgroundColor: "#ddd",
+        flexDirection:"row",
+        flex:1 //it will take all width of the screen
+
+    },
+    One: {
+        backgroundColor: "violet",
+        padding: 10
+    },
+    Two: {
+        backgroundColor: "gold",
+        padding: 10
+    },
+    Three: {
+        backgroundColor: "coral",
+        padding: 10
+    },
+    Four: {
+        backgroundColor: "pink",
+        padding: 10
+    },
+    Five: {
+        backgroundColor: "skyblue",
+        padding: 10
+    }
+})
+
+
+Icons:
+  when we create app with expo we dont need any dependencies it  has a icons inbuild
+
+  see here: https://docs.expo.dev/guides/icons/

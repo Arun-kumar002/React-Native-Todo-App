@@ -3,6 +3,9 @@ import { StyleSheet, View, FlatList, TouchableWithoutFeedback, Keyboard, Button,
 import Header from './components/Header';
 import TodoItem from './components/TodoItem';
 import Add from "./components/Add"
+import Sandbox from './components/Sandbox';
+import { SafeAreaView } from 'react-native-web';
+
 export default function App() {
   let [state, setState] = useState(
     [
@@ -35,6 +38,9 @@ export default function App() {
   }
 
   return (
+    // // <SafeAreaView>
+    //   <Sandbox />
+    // // </SafeAreaView>
     <TouchableWithoutFeedback onPress={() => { console.log('Dismissed Keyboard'); Keyboard.dismiss(); }}>
       <View style={styles.container}>
         {/* Headers */}
@@ -61,10 +67,11 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 40,
-
+    flex: 1
   },
   list: {
-    marginTop: 20
+    marginTop: 20,
+    flex:1
   }
 
 });
