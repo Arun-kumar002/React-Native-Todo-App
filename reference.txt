@@ -106,6 +106,26 @@ TouchableOpacity:
       </FlatList>
 
        const pressHandler = (index) => {
-        console.log(index)
+            console.log(index)
             alert(`You clicked ${index}`)
         }
+
+Alert:
+
+  Launches an alert dialog with the specified title and message.
+
+  see here; https://reactnative.dev/docs/alert
+
+  ex:
+
+      Alert.alert("OOPS!", "Enter Something...OkWa", [
+        { text: "Understood", onPress: () => { console.log('alert closed') } }
+      ])
+
+
+TouchableWithoutFeedback:
+    If the user try to to fill the user input component but the keyboard is comes he enter the value but how the keyboard will close again he supposed click a back button instead we can able to use the component to capture the event . 
+if the user click the any place in the screen it will call the onPress event we can close keyboard.
+
+see here: https://reactnative.dev/docs/touchablewithoutfeedback
+
